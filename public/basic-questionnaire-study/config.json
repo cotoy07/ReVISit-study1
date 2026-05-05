@@ -64,8 +64,7 @@
                     "numItems": 5
                 }
             ]
-        }
-        ,
+        },
     "bar-chart-1":{
             "baseComponent": "bar-chart",
             "description": "A trial for the user to click the largest bar",
