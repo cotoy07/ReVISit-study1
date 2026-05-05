@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/revisit-studies/study/v2.4.2/src/parser/GlobalConfigSchema.json",
   "configsList": [
+    "edge-bundling",
     "tutorial",
     "tutorial-replication",
     "basic-questionnaire-study",
@@ -56,6 +57,9 @@
     "test-step-logic"
   ],
   "configs": {
+    "edge-bundling":{
+      "path":"edge-bundling/config.json"
+    },
     "tutorial": {
       "path": "tutorial/config.json"
     },
