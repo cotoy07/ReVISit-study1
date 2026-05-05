@@ -3,6 +3,7 @@
   "configsList": [
     "tutorial",
     "tutorial-replication",
+    "basic-questionnaire-study",
     "demo-html",
     "demo-html-input",
     "demo-form-elements",
@@ -237,6 +238,9 @@
     "example-VLAT-adaptive": {
       "path": "example-VLAT-adaptive/config.json",
       "test": true
-    }
+    },
+    "basic-questionnaire-study": {
+	"path": "basic-questionnaire-study/config.json"
+}
   }
 }
