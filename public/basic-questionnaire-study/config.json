@@ -67,20 +67,20 @@
         }
         ,
     "bar-chart-1":{
-    "baseComponent": "bar-chart",
-    "description": "A trial for the user to click the largest bar",
-    "instruction": "Click on the largest bar",
-    "parameters": {
-        "barData": [0.32, 0.01, 1.2, 1.3, 0.82, 0.4, 0.3]
-    }
+            "baseComponent": "bar-chart",
+            "description": "A trial for the user to click the largest bar",
+            "instruction": "Click on the largest bar",
+            "parameters": {
+                "barData": [0.32, 0.01, 1.2, 1.3, 0.82, 0.4, 0.3]
+            }
     },
     "bar-chart-2":{
-    "baseComponent": "bar-chart",
-    "description": "A trial for the user to click the smallest bar",
-    "instruction": "Click on the smallest bar",
-    "parameters": {
-        "barData": [1.2, 1.2, 1.2, 1.3, 0.82, 0.4, 0.3]
-    }
+            "baseComponent": "bar-chart",
+            "description": "A trial for the user to click the smallest bar",
+            "instruction": "Click on the smallest bar",
+            "parameters": {
+                "barData": [1.2, 1.2, 1.2, 1.3, 0.82, 0.4, 0.3]
+            }
 }
     },
     "sequence": {
@@ -88,7 +88,9 @@
         "components": [
             "introduction",
             "first-question-set",
-            "second-question-set"
+            "second-question-set",
+            "bar-chart-1",
+            "bar-chart-2"
         ]
     },
 
