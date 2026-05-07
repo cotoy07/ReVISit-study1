@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>edge bundling</title>
+    <!-- Load revisit-communicate to be able to send data to reVISit -->
+    <script src="../../revisitUtilities/revisit-communicate.js"></script>
+      <style>
+    #container {
+      display: flex;
+      gap: 20px;
+    }
+
+    img {
+      width: 300px;
+    }
+  </style>
+  </head>
+
+  <body> 
+     <div id="container">
+    <div id="left"></div>
+    <div id="right"></div>
+  </div>"></div>
+
+  </body>
+
+ <script>
+Revisit.onDataReceive((data) => {
+  const number = data['number'];
+  const taskID = 'select-photo';
+
+  // ランダムで左右決定
+  const choice = Math.random() < 0.5 ? "left" : "right";
+
+  // 画像1：メイン
+  const img1 = document.createElement("img");
+  img1.src = `plot_a/a-${number}.png`;
+  img1.width = 300;
+
+  // 画像2：比較用
+  const img2 = document.createElement("img");
+  img2.src = `fdeb_plot_a/fdeb-a-${number}.png`;
+  img2.width = 300;
+
+  // 配置
+  if (choice === "left") {
+    document.getElementById("left").appendChild(img1);
+    document.getElementById("right").appendChild(img2);
+  } else {
+    document.getElementById("left").appendChild(img2);
+    document.getElementById("right").appendChild(img1);
+  }
+
+  // 回答送信（どっちが正解かではなく条件）
+  Revisit.postAnswers({
+    [taskID]: choice
+  });
+});
+</script>
+</html>

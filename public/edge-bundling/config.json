@@ -1,143 +1,157 @@
 {
-  "$schema": "https://raw.githubusercontent.com/revisit-studies/study/v2.4.2/src/parser/StudyConfigSchema.json",
-  "studyMetadata": {
-    "title": "Edge Path Bundling ",
-    "version": "pilot",
-    "authors": [
-      "cotoha"
-    ],
-    "date": "2026-5-5",
-    "description": "テスト用",
-    "organizations": [
-      "University of Utah",
-      "WPI"
-    ]
+    "$schema": "https://raw.githubusercontent.com/revisit-studies/study/main/src/parser/StudyConfigSchema.json",
+    "studyMetadata": {
+        "title": "Edge bundling study",
+        "version": "pilot",
+        "authors": [
+            "The reVISit Team",
+            "You :)"
+        ],
+        "date": "2026-02-23",
+        "description": "edge bundling",
+        "organizations": [
+            "University of Utah",
+            "WPI"
+        ]
+    },
+    "uiConfig": {
+        "contactEmail": "your@email.com",
+        "helpTextPath": "edge-bundling/assets/help.md",
+        "logoPath": "revisitAssets/revisitLogoSquare.svg",
+        "withProgressBar": true,
+        "autoDownloadStudy": false,
+        "withSidebar": true
+    },
+    "components": {
+     
+        "introduction": {
+            "type": "markdown",
+            "path": "edge-bundling/assets/introduction.md",
+            "response": []
+        },
+        
+   "trial1":{
+            "baseComponent":"select-photo",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+              "parameters": {
+                "number": 1
+            }
+        },
+    "trial2":{
+      "baseComponent":"select-photo",
+      "description":"ランダムに表示された二つの画像から選ぶ",
+      "instruction":" どちらが情報を読み取りやすいと感じますか？",
+        "parameters": {
+          "number": 2
+      }
   },
-  "uiConfig": {
-    "contactEmail": "contact@revisit.dev",
-    "helpTextPath": "edge-bundling/assets/introduction.md",
-    "logoPath": "revisitAssets/revisitLogoSquare.svg",
-    "withProgressBar": true,
-    "autoDownloadStudy": false,
-    "withSidebar": true,
-    "nextOnEnter": true
-  },
-  "components": {
-    "introduction": {
-      "type": "markdown",
-      "path": "edge-bundling/assets/introduction.md",
-      "response": []
+   "trial3":{
+            "baseComponent":"select-photo",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+              "parameters": {
+                "number": 3
+            }
+        
     },
-      "dotplot-low": {
-       "meta": {
-        "difficulty": 1,
-        "nr-dots": 20,
-        "temp": "low"
-             },
-      "description": "Low temperature variantあああ",
-      "instruction": "Will you issue blankets to the alpacas?",
-      "type": "image",
-      "path": "edge-bundling/assets/epd_plot_a/a-1_EPB_137_430_graph.png",
-      "style": {
-        "width": "800px"
-      },
-      "nextButtonLocation": "sidebar",
-      "response": [
-        {
-          "id": "demo-image/assets-response",
-          "prompt": "Answer:",
-          "location": "sidebar",
-          "type": "radio",
-          "options": [
-            "Yes",
-            "No"
-          ]
+     "trial4":{
+            "baseComponent":"select-photo",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+              "parameters": {
+                "number": 4
+            }
+        },
+         "trial5":{
+            "baseComponent":"select-photo",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+              "parameters": {
+                "number": 5
+            }
+        },
+         "trial6":{
+            "baseComponent":"select-photo",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+              "parameters": {
+                "number": 6
+            }
+        },
+         "trial7":{
+            "baseComponent":"select-photo",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+              "parameters": {
+                "number": 7
+            }
+        },
+         "trial8":{
+            "baseComponent":"select-photo",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+              "parameters": {
+                "number": 8
+            }
+        },
+         "trial9":{
+            "baseComponent":"select-photo",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+              "parameters": {
+                "number": 9
+            }
+        },
+         "trial10":{
+            "baseComponent":"select-photo",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+              "parameters": {
+                "number": 10
+            }
         }
-      ],
-      "nextButtonEnableTime": 3000,
-      "nextButtonDisableTime": 15000
-    },
-    "dotplot-medium": {
-      "meta": {
-        "difficulty": 2,
-        "nr-dots": 20,
-        "temp": "mid"
       },
-      "description": "Medium temperature variant",
-      "instruction": "Will you issue blankets to the alpacas?",
-      "type": "image",
-      "path": "edge-bundling/assets/epd_plot_a/a-3_EPB_72_405_graph.png",
-      "style": {
-        "width": "800px"
-      },
-      "nextButtonLocation": "sidebar",
-      "response": [
-        {
-          "id": "demo-image/assets-response",
-          "prompt": "Answer:",
-          "location": "sidebar",
-          "type": "radio",
-          "options": [
-            "Yes",
-            "No"
-          ]
-        }
-      ]
-    },
-    "dotplot-high": {
-      "meta": {
-        "difficulty": 1,
-        "nr-dots": 20,
-        "temp": "hi"
-      },
-      "description": "High temperature variant",
-      "instruction": "Will you issue blankets to the alpacas?",
-      "type": "image",
-      "path": "public/edge-bundling/assets/epd_plot_a/a-4_EPB_33_241_graph.png",
-      "style": {
-        "width": "800px"
-      },
-      "nextButtonLocation": "sidebar",
-      "response": [
-        {
-          "id": "demo-image/assets-response",
-          "prompt": "Answer:",
-          "location": "sidebar",
-          "type": "radio",
-          "options": [
-            "Yes",
-            "No"
-          ]
-        }
-      ]
-    },
-    "externalImage": {
-      "type": "image",
-      "path": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg",
-      "style": {
-        "width": "800px"
-      },
-      "nextButtonLocation": "sidebar",
-      "response": [
-        {
-          "id": "externalImage-response",
-          "prompt": "What is this a picture of?",
-          "location": "sidebar",
-          "type": "shortText",
-          "required": false
-        }
-      ]
+
+    "baseComponents": {
+        "select-photo":{
+            "type":"website",
+        "response": [
+    {
+      "id": "photo-choice",
+      "prompt": "どちらの図が見やすいと感じますか?",
+      "type": "radio",
+      "location": "belowStimulus",
+      "options": ["Edge Bundling後グラフ", "Edge Bundling前グラフ"]
     }
-  },
-  "sequence": {
-    "order": "fixed",
-    "components": [
+  ],
+            "path": "edge-bundling/assets/select-photo.html",
+            "instructionLocation": "aboveStimulus"
+        }
+       
+},
+    
+    "sequence": {
+  "order": "fixed",
+  "components": [
       "introduction",
-      "dotplot-low",
-      "dotplot-medium",
-      "dotplot-high",
-      "externalImage"
-    ]
-  }
+  { "order":"latinSquare",
+        "numSamples": 3,
+        "components": [
+          "trial1",
+          "trial2",
+          "trial3",
+          "trial4",
+          "trial5",
+          "trial6",
+          "trial7",
+          "trial8",
+          "trial9",
+          "trial10"
+        ]}
+ 
+  ]
+}
+        
 }
 
