@@ -22,91 +22,217 @@
         "autoDownloadStudy": false,
         "withSidebar": true
     },
+
     "components": {
-     
-        "introduction": {
+      "introduction_ja": {
+          "type": "markdown",
+          "path": "edge-bundling/assets/introduction.md",
+          "response": [
+            {
+              "id": "consent",
+              "prompt": "",
+              "type": "checkbox",
+              "options": [
+                {
+                  "label": "同意します。",
+                  "value": "agree"
+                }
+              ],
+              "required": true
+            }
+          ]
+        },
+   
+
+    "introduction_en": {
+  "type": "markdown",
+  "path": "edge-bundling/assets/introduction_english.md",
+  "response": [
+    {
+      "id": "consent",
+      "prompt": "",
+      "type": "checkbox",
+      "options": [
+        {
+          "label": "I agree",
+          "value": "agree"
+        }
+      ],
+      "required": true
+    }
+  ]
+},
+  "network-instruction_ja":{
             "type": "markdown",
-            "path": "edge-bundling/assets/introduction.md",
+            "path": "edge-bundling/assets/network-instruction-2.md",
             "response": []
         },
         
-   "trial1":{
-            "baseComponent":"select-photo",
+  "network-instruction_en":{
+        "type": "markdown",
+        "path": "edge-bundling/assets/network-instruction-2-english.md",
+        "response": []
+        },
+
+        "trial1_ja":{
+            "baseComponent":"select-photo_ja",
             "description":"ランダムに表示された二つの画像から選ぶ",
-            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+            "instruction":" 問いに答えてください。",
               "parameters": {
                 "number": 1
             }
         },
-    "trial2":{
-      "baseComponent":"select-photo",
+    "trial2_ja":{
+      "baseComponent":"select-photo_ja",
       "description":"ランダムに表示された二つの画像から選ぶ",
-      "instruction":" どちらが情報を読み取りやすいと感じますか？",
+      "instruction":"  問いに答えてください。",
         "parameters": {
           "number": 2
       }
   },
-   "trial3":{
-            "baseComponent":"select-photo",
+   "trial3_ja":{
+            "baseComponent":"select-photo_ja",
             "description":"ランダムに表示された二つの画像から選ぶ",
-            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+            "instruction":" 問いに答えてください。",
               "parameters": {
                 "number": 3
             }
         
     },
-     "trial4":{
-            "baseComponent":"select-photo",
+     "trial4_ja":{
+            "baseComponent":"select-photo_ja",
             "description":"ランダムに表示された二つの画像から選ぶ",
-            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+            "instruction":"  問いに答えてください。",
               "parameters": {
                 "number": 4
             }
         },
-         "trial5":{
-            "baseComponent":"select-photo",
+         "trial5_ja":{
+            "baseComponent":"select-photo_ja",
             "description":"ランダムに表示された二つの画像から選ぶ",
-            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+            "instruction":"  問いに答えてください。",
               "parameters": {
                 "number": 5
             }
         },
-         "trial6":{
-            "baseComponent":"select-photo",
+         "trial6_ja":{
+            "baseComponent":"select-photo_ja",
             "description":"ランダムに表示された二つの画像から選ぶ",
-            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+            "instruction":" 問いに答えてください。",
               "parameters": {
                 "number": 6
             }
         },
-         "trial7":{
-            "baseComponent":"select-photo",
+         "trial7_ja":{
+            "baseComponent":"select-photo_ja",
             "description":"ランダムに表示された二つの画像から選ぶ",
-            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+            "instruction":" 問いに答えてください。",
               "parameters": {
                 "number": 7
             }
         },
-         "trial8":{
-            "baseComponent":"select-photo",
+         "trial8_ja":{
+            "baseComponent":"select-photo_ja",
             "description":"ランダムに表示された二つの画像から選ぶ",
-            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+            "instruction":"  問いに答えてください。",
               "parameters": {
                 "number": 8
             }
         },
-         "trial9":{
-            "baseComponent":"select-photo",
+         "trial9_ja":{
+            "baseComponent":"select-photo_ja",
             "description":"ランダムに表示された二つの画像から選ぶ",
-            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+            "instruction":"  問いに答えてください。",
               "parameters": {
                 "number": 9
             }
         },
-         "trial10":{
-            "baseComponent":"select-photo",
+         "trial10_ja":{
+            "baseComponent":"select-photo_ja",
             "description":"ランダムに表示された二つの画像から選ぶ",
-            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+            "instruction":"  問いに答えてください。",
+              "parameters": {
+                "number": 10
+            }
+        }
+   ,
+   "trial1_en":{
+            "baseComponent":"select-photo_en",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" Please answer the following questions.",
+              "parameters": {
+                "number": 1
+            }
+        },
+    "trial2_en":{
+      "baseComponent":"select-photo_en",
+      "description":"ランダムに表示された二つの画像から選ぶ",
+      "instruction":" Please answer the following questions.",
+        "parameters": {
+          "number": 2
+      }
+  },
+   "trial3_en":{
+            "baseComponent":"select-photo_en",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" Please answer the following questions.",
+              "parameters": {
+                "number": 3
+            }
+        
+    },
+     "trial4_en":{
+            "baseComponent":"select-photo_en",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" Please answer the following questions.",
+              "parameters": {
+                "number": 4
+            }
+        },
+         "trial5_en":{
+            "baseComponent":"select-photo_en",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" Please answer the following questions.",
+              "parameters": {
+                "number": 5
+            }
+        },
+         "trial6_en":{
+            "baseComponent":"select-photo_en",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" Please answer the following questions.",
+              "parameters": {
+                "number": 6
+            }
+        },
+         "trial7_en":{
+            "baseComponent":"select-photo_en",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" Please answer the following questions.",
+              "parameters": {
+                "number": 7
+            }
+        },
+         "trial8_en":{
+            "baseComponent":"select-photo_en",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" Please answer the following questions.",
+              "parameters": {
+                "number": 8
+            }
+        },
+         "trial9_en":{
+            "baseComponent":"select-photo_en",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" Please answer the following questions.",
+              "parameters": {
+                "number": 9
+            }
+        },
+         "trial10_en":{
+            "baseComponent":"select-photo_en",
+            "description":"ランダムに表示された二つの画像から選ぶ",
+            "instruction":" Please answer the following questions.",
               "parameters": {
                 "number": 10
             }
@@ -114,42 +240,205 @@
       },
 
     "baseComponents": {
-        "select-photo":{
+        "select-photo_en":{
             "type":"website",
-        "response": [
-    {
-      "id": "photo-choice",
-      "prompt": "どちらの図が見やすいと感じますか?",
-      "type": "radio",
-      "location": "belowStimulus",
-      "options": ["Edge Bundling後グラフ", "Edge Bundling前グラフ"]
-    }
-  ],
+     "response": [
+  {
+    "id": "photo-choice",
+    "prompt": "Which diagram makes it easier to understand the overall relationships and group structures?",
+    "type": "radio",
+    "location": "belowStimulus",
+    "options": [
+  {
+    "label": "Diagram after edge bundling",
+    "value": "after"
+  },
+  {
+    "label": "Diagram before edge bundling",
+    "value": "before"
+  },
+  {
+    "label": "Neither",
+    "value": "neither"
+  }
+],
+      "required": true
+  },
+  {
+    "id": "photo-info",
+    "prompt": "Which diagram makes it easier to distinguish points (nodes) and lines (edges), or track a specific line?",
+    "type": "radio",
+    "location": "belowStimulus",
+    "options": [
+  {
+    "label": "Diagram after edge bundling",
+    "value": "after"
+  },
+  {
+    "label": "Diagram before edge bundling",
+    "value": "before"
+  },
+  {
+    "label": "Neither",
+    "value": "neither"
+  }
+],
+      "required": true
+  },
+
+
+  {
+    "id": "photo-beauty",
+    "prompt": "Which diagram do you find more visually pleasing or comfortable to look at?",
+    "type": "radio",
+    "location": "belowStimulus",
+   "options": [
+  {
+    "label": "Diagram after edge bundling",
+    "value": "after"
+  },
+  {
+    "label": "Diagram before edge bundling",
+    "value": "before"
+  },
+  {
+    "label": "Neither",
+    "value": "neither"
+  }
+],
+"required":true
+  }
+],
+            "path": "edge-bundling/assets/select-photo.html",
+            "instructionLocation": "aboveStimulus",
+        },
+
+
+     "select-photo_ja":{
+            "type":"website",
+     "response": [
+  {
+    "id": "photo-choice",
+    "prompt": "どちらの図の方が、関係性や全体構造（グループ同士の繋がりなど）を把握しやすいと感じますか？",
+    "type": "radio",
+    "location": "belowStimulus",
+   "options": [
+  {
+    "label": "エッジバンドリング後の図",
+    "value": "after"
+  },
+  {
+    "label": "エッジバンドリング前の図",
+    "value": "before"
+  },
+  {
+    "label": "どちらでもない",
+    "value": "neither"
+  }
+],
+      "required": true
+  },
+  {
+    "id": "photo-info",
+    "prompt": "どちらの図の方が、ノード（点）やエッジ（線）が判別しやすく特定の線を正確に追えると感じますか？",
+    "type": "radio",
+    "location": "belowStimulus",
+    "options": [
+  {
+    "label": "エッジバンドリング後の図",
+    "value": "after"
+  },
+  {
+    "label": "エッジバンドリング前の図",
+    "value": "before"
+  },
+  {
+    "label": "どちらでもない",
+    "value": "neither"
+  }
+],
+      "required": true
+  },
+  {
+    "id": "photo-beauty",
+    "prompt": "どちらの図の方が、視覚的に好ましい・心地よいと感じますか？",
+    "type": "radio",
+    "location": "belowStimulus",
+    "options": [
+  {
+    "label": "エッジバンドリング後の図",
+    "value": "after"
+  },
+  {
+    "label": "エッジバンドリング前の図",
+    "value": "before"
+  },
+  {
+    "label": "どちらでもない",
+    "value": "neither"
+  }
+],
+      "required": true
+  }
+],
             "path": "edge-bundling/assets/select-photo.html",
             "instructionLocation": "aboveStimulus"
         }
        
 },
-    
-    "sequence": {
+ "sequence": {
   "order": "fixed",
   "components": [
-      "introduction",
-  { "order":"latinSquare",
-        "numSamples": 3,
-        "components": [
-          "trial1",
-          "trial2",
-          "trial3",
-          "trial4",
-          "trial5",
-          "trial6",
-          "trial7",
-          "trial8",
-          "trial9",
-          "trial10"
-        ]}
- 
+    {
+      "id": "ja",
+      "conditional": true,
+      "order": "fixed",
+      "components": [
+        "introduction_ja",
+        "network-instruction_ja",
+        {
+          "order": "latinSquare",
+          "numSamples": 3,
+          "components": [
+            "trial1_ja",
+            "trial2_ja",
+            "trial3_ja",
+            "trial4_ja",
+            "trial5_ja",
+            "trial6_ja",
+            "trial7_ja",
+            "trial8_ja",
+            "trial9_ja",
+            "trial10_ja"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "en",
+      "conditional": true,
+      "order": "fixed",
+      "components": [
+        "introduction_en",
+        "network-instruction_en",
+        {
+          "order": "latinSquare",
+          "numSamples": 3,
+          "components": [
+            "trial1_en",
+            "trial2_en",
+            "trial3_en",
+            "trial4_en",
+            "trial5_en",
+            "trial6_en",
+            "trial7_en",
+            "trial8_en",
+            "trial9_en",
+            "trial10_en"
+          ]
+        }
+      ]
+    }
   ]
 }
         
