@@ -85,7 +85,7 @@
    "edge-bundling-test":{
             "baseComponent":"select-photo",
             "description":"ランダムに表示された二つの画像から選ぶ",
-            "instruction":" どちらが情報を読み取りやすいと感じますか？",
+            "instruction":" Please answer the following questions.",
               "parameters": {
                 "number": 3
             }
