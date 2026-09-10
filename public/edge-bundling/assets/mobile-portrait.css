@@ -1,5 +1,7 @@
 /* reVISit mobile-first layout for a portrait smartphone study */
-html, body {
+
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -28,9 +30,19 @@ html, body {
   margin-right: auto;
 }
 
+/* Response area */
 .responseBlock,
 .response {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent child elements from forcing the page wider. */
+.responseBlock > *,
+.response > * {
+  min-width: 0;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -39,7 +51,13 @@ html, body {
 .responseBlock button,
 button {
   min-height: 44px;
+  max-width: 100%;
+  height: auto;
   font-size: 16px;
+  line-height: 1.4;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
   touch-action: manipulation;
 }
 
@@ -50,7 +68,42 @@ button {
 }
 
 .responseBlock label {
+  max-width: 100%;
+  min-width: 0;
   line-height: 1.4;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Text must wrap on narrow screens. */
+.responseBlock p,
+.response p,
+.markdown p,
+.markdown li,
+.responseBlock .MuiTypography-root,
+.responseBlock .MuiFormControlLabel-label {
+  max-width: 100%;
+  min-width: 0;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Feedback alert */
+.MuiAlert-root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.MuiAlert-message {
+  max-width: 100%;
+  min-width: 0;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* Seven-point scales must not be clipped on narrow devices. */
@@ -62,20 +115,46 @@ button {
 
 @media (max-width: 600px) {
   .main {
+    width: 100% !important;
+    max-width: 100% !important;
     padding-left: 6px !important;
     padding-right: 6px !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
-  .responseBlock {
+  .responseBlock,
+  .response {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .responseBlock p,
   .response p,
   .markdown p,
-  .markdown li {
+  .markdown li,
+  .responseBlock label,
+  .responseBlock .MuiTypography-root,
+  .responseBlock .MuiFormControlLabel-label,
+  .responseBlock .MuiAlert-message {
+    max-width: 100%;
+    min-width: 0;
     font-size: 16px;
     line-height: 1.55;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .MuiAlert-root,
+  .MuiAlert-message {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
   }
 }
