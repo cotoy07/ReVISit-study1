@@ -282,8 +282,15 @@ export function ResponseBlock({
       return acc;
     }, {}) : {}) as StoredAnswer['answer'];
 
-    const correctAnswers = Object.fromEntries(allResponsesWithDefaults.map((response) => {
-      const configCorrectAnswer = config?.correctAnswer?.find((answer) => answer.id === response.id);
+    // correctAnswer が設定されている回答項目だけを採点対象にする
+    const gradableResponses = allResponsesWithDefaults.filter((response) => (
+      config?.correctAnswer?.some((answer) => answer.id === response.id)
+    ));
+
+    const correctAnswers = Object.fromEntries(gradableResponses.map((response) => {
+      const configCorrectAnswer = config?.correctAnswer?.find(
+        (answer) => answer.id === response.id,
+      );
       const suppliedAnswer = allAnswers[response.id];
 
       return [response.id, responseAnswerIsCorrect(
@@ -291,14 +298,23 @@ export function ResponseBlock({
         configCorrectAnswer?.answer,
         configCorrectAnswer?.acceptableLow,
         configCorrectAnswer?.acceptableHigh,
-        { ignoreArrayOrder: response.type === 'checkbox' || response.type === 'dropdown' },
+        {
+          ignoreArrayOrder:
+        response.type === 'checkbox' || response.type === 'dropdown',
+        },
       )];
     }));
 
     if (hasCorrectAnswerFeedback) {
-      allResponsesWithDefaults.forEach((response) => {
+      gradableResponses.forEach((response) => {
         if (correctAnswers[response.id] && !alertConfig[response.id]?.message.includes('You\'ve failed to answer this question correctly')) {
-          updateAlertConfig(response.id, true, 'Correct Answer', 'You have answered the question correctly.', 'green');
+          updateAlertConfig(
+            response.id,
+            true,
+            '正解',
+            '正解です。',
+            'green',
+          );
         } else {
           storeDispatch(saveIncorrectAnswer({ question: identifier, identifier: response.id, answer: allAnswers[response.id] }));
           let message = '';
@@ -369,10 +385,46 @@ export function ResponseBlock({
     <>
       <Box className={`responseBlock responseBlock-${location}`} style={style}>
         {allResponsesWithDefaults.map((response) => {
-          const configCorrectAnswer = config.correctAnswer?.find((answer) => answer.id === response.id)?.answer;
-          const correctAnswer = configCorrectAnswer === undefined
-            ? undefined
-            : (typeof configCorrectAnswer === 'object' ? JSON.stringify(configCorrectAnswer) : `${configCorrectAnswer}`);
+          const configCorrectAnswer = config.correctAnswer?.find(
+            (answer) => answer.id === response.id,
+          )?.answer;
+
+          let correctAnswer: string | undefined;
+
+          if (configCorrectAnswer === undefined) {
+            correctAnswer = undefined;
+          } else if (typeof configCorrectAnswer === 'object') {
+            correctAnswer = JSON.stringify(configCorrectAnswer);
+          } else if ('options' in response && Array.isArray(response.options)) {
+            const matchingOption = response.options.find((option) => {
+              if (typeof option === 'string') {
+                return option === configCorrectAnswer;
+              }
+
+              return (
+                option !== null
+      && typeof option === 'object'
+      && 'value' in option
+      && option.value === configCorrectAnswer
+              );
+            });
+
+            if (typeof matchingOption === 'string') {
+              correctAnswer = matchingOption;
+            } else if (
+              matchingOption !== undefined
+    && matchingOption !== null
+    && typeof matchingOption === 'object'
+    && 'label' in matchingOption
+            ) {
+              correctAnswer = `${matchingOption.label}`;
+            } else {
+              correctAnswer = `${configCorrectAnswer}`;
+            }
+          } else {
+            correctAnswer = `${configCorrectAnswer}`;
+          }
+
           // Check if this response is in the current location
           const isInCurrentLocation = responses.some((r) => r.id === response.id);
 
