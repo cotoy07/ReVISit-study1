@@ -346,11 +346,11 @@
       "response": [
         {
           "id":"experimentID",
-          "prompt":"実験のIDを入力してください。",
+          "prompt":"実験のご協力ありがとうございます。\n\n実験のIDを入力してください。\n\n※指定されていない方は空欄のまま進んでください。",
           "type": "numerical",
           "max": 9999,
           "min": 0,
-          "required":true
+          "required": false,
         }
       ]
     },
