@@ -340,16 +340,11 @@
       "response": [
         {
           "id":"experimentID",
-          "prompt":"実験のご協力ありがとうございます。\n\n実験のIDを入力してください。\n\n※指定されていない方は空欄のまま進んでください。",
+          "prompt":"実験のご協力ありがとうございます。\n\n実験のIDを入力してください。",
           "type": "numerical",
           "max": 9999,
-<<<<<<< HEAD
           "min": 1000,
           "required":true
-=======
-          "min": 0,
-          "required": false,
->>>>>>> origin/main
         }
       ]
     },
