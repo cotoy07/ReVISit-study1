@@ -20,7 +20,7 @@
     "autoDownloadStudy": false,
     "withSidebar": false,
     "urlParticipantIdParam": "pid",
-    "studyEndMsg":  "ご協力ありがとうございました。これでアンケートは終了です。\n\n完了コード：{COMPLETION_CODE}"
+    "studyEndMsg":  "ご協力ありがとうございました。これでアンケートは終了です。"
   },
   "baseComponents": {
     "global_trial_A_base": {
@@ -246,13 +246,7 @@
       "type": "image",
       "path": "edge-bundling/assets/network-overview.webp",
       "description": "ネットワーク図の見方",
-      "instruction": "下の図は、丸と線で物事のつながりを表したネットワーク図です。\n\n
-
-例えば、丸を人、線を友人関係とすると、人同士の交友関係を表すことができます。\n\n
-
-実験では、線のつながりが特に多い丸らを同じ色で表し4つのグループが内包するネットワーク図を使用します。\n\n
-
-本研究では、線の描き方によって、図の見え方や問題への回答がどのように変わるかを調べます。",
+      "instruction": "下の図は、丸と線で物事のつながりを表したネットワーク図です。\n\n例えば、丸を人、線を友人関係とすると、人同士の交友関係を表すことができます。\n\n実験では、線のつながりが特に多い丸らを同じ色で表し4つのグループが内包するネットワーク図を使用します。\n\n本研究では、線の描き方によって、図の見え方や問題への回答がどのように変わるかを調べます。",
       "instructionLocation": "aboveStimulus",
       "response": []
     },
@@ -349,11 +343,20 @@
           "prompt":"実験のご協力ありがとうございます。\n\n実験のIDを入力してください。\n\n※指定されていない方は空欄のまま進んでください。",
           "type": "numerical",
           "max": 9999,
+<<<<<<< HEAD
+          "min": 1000,
+          "required":true
+=======
           "min": 0,
           "required": false,
+>>>>>>> origin/main
         }
       ]
     },
+
+   
+     
+    
     "global_practice_01": {
       "type": "image",
       "path": "edge-bundling/assets/practice/global/global_practice_01.webp",
